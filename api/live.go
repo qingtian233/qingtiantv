@@ -54,7 +54,7 @@ func Handler(w http.ResponseWriter, r *http.Request)  {
         biliobj := &liveurls.BiliBili{}
         biliobj.Rid = rid
         biliobj.Platform = utils.DefaultQuery(r, "platform", "h5")
-        biliobj.Quality = utils.DefaultQuery(r, "quality", "400")
+        biliobj.Quality = utils.DefaultQuery(r, "quality", "1000")
         biliobj.Line = utils.DefaultQuery(r, "line", "first")
         http.Redirect(w, r, utils.Duanyan(adurl, biliobj.GetPlayUrl()), http.StatusMovedPermanently)
       case "youtube":
